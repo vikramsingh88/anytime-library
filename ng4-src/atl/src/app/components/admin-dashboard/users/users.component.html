@@ -1,0 +1,27 @@
+<h2>All Non Admin Users</h2>
+<hr>
+<!-- List Books -->
+<div class="container">   
+  <div class="row">
+    <div class="col-4">
+        <table class="table table-hover">
+            <thead>
+            <tr>
+                <th>First Name</th>
+                <th>Last Name</th>
+                <th>Email</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr *ngFor="let user of users | sort:'firstName'; let i = index">
+                <td>{{user.firstName}}</td>
+                <td>{{user.lastName}}</td>
+                <td>{{user.email}}</td>
+                <td><button type="button" class="btn btn-danger" (click)="onDelete(i)">Delete</button></td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+  </div> 
+</div>
+

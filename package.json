@@ -1,0 +1,29 @@
+{
+  "name": "anytime_library_server",
+  "version": "1.0.0",
+  "description": "node server for library management system",
+  "main": "app.js",
+  "scripts": {
+    "start": "node app.js"
+  },
+  "keywords": [
+    "node",
+    "mongo",
+    "express",
+    "jwt",
+    "passport"
+  ],
+  "author": "Vikram Singh",
+  "license": "ISC",
+  "dependencies": {
+    "bcryptjs": "*",
+    "body-parser": "*",
+    "cors": "*",
+    "dateformat": "^2.0.0",
+    "express": "*",
+    "jsonwebtoken": "*",
+    "mongoose": "*",
+    "passport": "*",
+    "passport-jwt": "*"
+  }
+}

@@ -1,0 +1,31 @@
+<div class="jumbotron text-center">
+    <h1>Anytime Library</h1>
+    <p class="lead">Welcome to our Anytime library management system</p>
+</div>
+<h2 class="page-header">Register</h2>
+<div class="container">
+  <div class="row">
+    <div class="col-xs-12 col-sm-10 col-md-8 col-sm-offset-1 col-md-offset-2">
+        <form (ngSubmit)="onRegistration()" #form="ngForm">
+          <div class="form-group">
+            <label>First Name</label>
+            <input type="text" name="firstname" id="firstname" class="form-control" ngModel required>
+          </div>
+          <div class="form-group">
+            <label>Last Name</label>
+            <input type="text" name="lastname" id="lastname" class="form-control" ngModel required>
+          </div>
+          <div class="form-group">
+            <label>Email</label>
+            <input type="text" name="email" id="email" class="form-control" email ngModel required #email="ngModel">
+            <span class="help-block" *ngIf="!email.valid && email.touched">Please enter a valid email</span>
+          </div>
+          <div class="form-group">
+            <label>Password</label>
+            <input type="password" name="password" id="password" class="form-control" ngModel required>
+          </div>
+          <button type="submit" class="btn btn-primary" [disabled]="!form.valid"> Sign up </button>
+        </form>
+    </div>
+  </div>
+</div>

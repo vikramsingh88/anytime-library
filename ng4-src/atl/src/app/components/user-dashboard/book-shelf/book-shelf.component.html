@@ -1,0 +1,28 @@
+<h2>My books</h2>
+<hr>
+
+<!-- Book shelf -->
+<div class="container">       
+<table class="table table-hover">
+    <thead>
+    <tr>
+        <th>Book Title</th>
+        <th>Book Auther</th>
+        <th>Book ISBN</th>
+        <th>Issue Date</th>
+        <th>Submission Date</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr *ngFor="let book of myBooks; let i = index;">
+        <td>{{book.bookTitle}}</td>
+        <td>{{book.bookAuther}}</td>
+        <td>{{book.bookISBN}}</td>
+        <td>{{book.issueDate | date}}</td>
+        <td>{{book.expiryDate | date}}</td>
+        <td><button type="button" class="btn btn-warning" (click)="onReturn(i)">Return</button></td>
+        <td><button type="button" class="btn btn-primary" (click)="onReview(i)">Review</button></td>
+    </tr>
+    </tbody>
+</table>
+</div>

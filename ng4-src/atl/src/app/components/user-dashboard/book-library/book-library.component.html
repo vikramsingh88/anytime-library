@@ -1,0 +1,43 @@
+<div >
+    <h2>Books Library</h2> 
+    <div class="right">
+        <div class="btn-group" appDropdown>
+            <button type="button" class="btn btn-success dropdown-toggle">{{searchBy}} <span class="caret"></span></button>
+            <ul class="dropdown-menu">
+                <li><a style="cursor: pointer;" (click)="onSelect('Technology')" > Technology</a></li>
+                <li><a style="cursor: pointer;" (click)="onSelect('Business')"> Business</a></li>
+                <li><a style="cursor: pointer;" (click)="onSelect('Fiction')"> Fiction</a></li>
+                <li><a style="cursor: pointer;" (click)="onSelect('Management')"> Management</a></li>
+            </ul>
+        </div>
+        <input type="text" placeholder="book title" #searchKey>
+        <button type="button" class="btn btn-primary" (click)="onSearch(searchKey.value)">Search</button>
+    </div>
+    <hr>
+</div>
+
+<!-- List Books -->
+<div class="container">       
+<table class="table table-hover" *ngIf="books">
+    <thead>
+    <tr>
+        <th>Book Title</th>
+        <th>Book Auther</th>
+        <th>Book ISBN</th>
+        <th>Book Quantity</th>
+        <th>Book Description</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr  *ngFor="let book of books; let i = index;">
+        <td>{{book.bookTitle}}</td>
+        <td>{{book.bookAuther}}</td>
+        <td>{{book.bookISBN}}</td>
+        <td>{{book.bookQuantity}}</td>
+        <td>{{book.description}}</td>
+        <td><button type="button" class="btn btn-warning" (click)="onAssigned(i)">Assign to self</button></td>
+        <td><button type="button" class="btn btn-primary" (click)="onDetails(i)">Get Details</button></td>
+    </tr>
+    </tbody>
+</table>
+</div>

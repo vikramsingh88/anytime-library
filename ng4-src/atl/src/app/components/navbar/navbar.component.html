@@ -1,0 +1,30 @@
+<nav class="navbar navbar-default">
+  <div class="container">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="#">Anytime Library</a>
+    </div>
+    <div id="navbar" class="collapse navbar-collapse">
+      <ul class="nav navbar-nav navbar-left">
+        <li><a>{{role}}</a></li>
+      </ul>
+
+      <ul class="nav navbar-nav navbar-right">
+        <li *ngIf="authService.isAdmin()"><a><button [routerLink]="['./all-user']" type="button" class="btn btn-primary">Users</button></a></li>
+        <li *ngIf="authService.isAdmin()"><a><button [routerLink]="['./books']" type="button" class="btn btn-success">Books</button></a></li>
+        <li *ngIf="authService.isAdmin()"><a><button [routerLink]="['./assigned-books']" type="button" class="btn btn-danger">Issued Books</button></a></li>
+
+        <li *ngIf="!authService.isAdmin()"><a><button [routerLink]="['./my-books']" type="button" class="btn btn-primary">My books</button></a></li>
+        <li *ngIf="!authService.isAdmin()"><a><button [routerLink]="['./library']" type="button" class="btn btn-success">Go to library</button></a></li>
+
+        <li><a><button [routerLink]="['./profile']" type="button" class="btn btn-info">{{name}}</button></a></li>
+        <li><a><button (click)="onLogout()" type="button" class="btn btn-warning">Logout</button></a></li>
+      </ul>
+    </div>
+  </div>
+</nav>

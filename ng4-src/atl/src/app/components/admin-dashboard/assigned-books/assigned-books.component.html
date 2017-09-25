@@ -1,0 +1,29 @@
+<h2>Issued books</h2>
+<hr>
+<!-- List Books -->
+<div class="container">       
+<table class="table table-hover" *ngIf="isArrayUpdated">
+    <thead>
+    <tr>
+        <th class="pointer" (click)="onSortByProp('userName')">Book Assigned To</th>
+        <th class="pointer" (click)="onSortByProp('bookTitle')">Book Title</th>
+        <th class="pointer" (click)="onSortByProp('bookAuther')">Book Auther</th>
+        <th class="pointer" (click)="onSortByProp('bookISBN')">Book ISBN</th>
+        <th class="pointer" (click)="onSortByProp('bookQunatity')">Book Quantity</th>
+        <th class="pointer" (click)="onSortByProp('issueDate')">Issue Date</th>
+        <th class="pointer" (click)="onSortByProp('expiryDate')">Submission Date</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr *ngFor="let book of books | sort:sortByProp;let i = index">
+        <td>{{book.userName}}</td>
+        <td>{{book.bookTitle}}</td>
+        <td>{{book.bookAuther}}</td>
+        <td>{{book.bookISBN}}</td>
+        <td>{{book.bookQunatity}}</td>
+        <td>{{book.issueDate | date}}</td>
+        <td>{{book.expiryDate | date}}</td>
+    </tr>
+    </tbody>
+</table>
+</div>

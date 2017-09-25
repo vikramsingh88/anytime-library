@@ -1,0 +1,20 @@
+<div class="center">
+  <h1 md-dialog-title>Review Book</h1>
+  <div md-dialog-content>
+      <form>
+          <md-form-field>
+            <textarea style="width : 300px;" name="comment" mdInput [(ngModel)]="comment" placeholder="Review book"></textarea>
+          </md-form-field>
+        </form>
+      <rating [(ngModel)]="starsCount"></rating>
+  </div>
+  
+  <div>
+    <button md-button (click)="confirmSelection()" class="btn btn-primary">
+      Review
+    </button>
+    <button md-button (click)="dialogRef.close()" class="btn btn-danger">
+      No Thanks
+    </button>
+  </div>
+</div>

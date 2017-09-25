@@ -1,0 +1,84 @@
+<!-- Add new book -->
+<h2>Add new books</h2>
+<hr>
+<div class="container">
+    <form (ngSubmit)="onBookSubmittion()" #form="ngForm">
+        <div class="row">
+            <div class="col-md-4">
+                <div class="form-group">
+                    <label>Book Title</label>
+                    <input type="text" name="bookTitle" id="bookTitle" class="form-control" [(ngModel)]="bookTitle" required>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="form-group">
+                    <label>Book Auther</label>
+                    <input type="text" name="bookAuther" id="bookAuther" class="form-control" [(ngModel)]="bookAuther" required>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="form-group">
+                    <label>Book ISBN</label>
+                    <input type="text" name="bookISBN" id="bookISBN" class="form-control" [(ngModel)]="bookISBN" required>            
+                </div>                    
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-4">
+                <div class="form-group">
+                    <label>Book Quantity</label>
+                    <input type="number" name="bookQuantity" id="bookQuantity" class="form-control" [(ngModel)]="bookQuantity" required>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="form-group">
+                    <label>Book Description</label>
+                    <input type="text" name="description" id="description" class="form-control" [(ngModel)]="description" required>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="form-group">
+                    <label for="Genre">Book Genre</label>
+                    <select id="genre" class="form-control" [ngModel]="defaultBookGenre" name="genre" required>
+                      <option value="Technology">Technology</option>
+                      <option value="Business">Business</option>
+                      <option value="Fiction">Fiction</option>
+                      <option value="Management">Management</option>
+                    </select>
+                </div>                
+            </div>
+            <div class="col-md-4">
+                <div class="form-group">
+                    <label></label><br>
+                    <input type="submit" value="{{isEdit ? 'Edit Book' : 'Add Book'}}" class="btn btn-primary" [disabled]="!form.valid">
+                </div>                
+            </div>
+        </div>
+    </form>
+</div>
+
+<!-- List Books -->
+<div class="container">       
+<table class="table table-hover" *ngIf="books">
+    <thead>
+    <tr>
+        <th>Book Title</th>
+        <th>Book Auther</th>
+        <th>Book ISBN</th>
+        <th>Book Quantity</th>
+        <th>Book Description</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr  *ngFor="let book of books; let i = index;">
+        <td>{{book.bookTitle}}</td>
+        <td>{{book.bookAuther}}</td>
+        <td>{{book.bookISBN}}</td>
+        <td>{{book.bookQuantity}}</td>
+        <td>{{book.description}}</td>
+        <td><button type="button" class="btn btn-warning" (click)="onEdit(i)">Edit</button></td>
+        <td><button type="button" class="btn btn-danger" (click)="onDelete(i)">Delete</button></td>
+    </tr>
+    </tbody>
+</table>
+</div>
