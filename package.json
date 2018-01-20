@@ -24,6 +24,7 @@
     "jsonwebtoken": "*",
     "mongoose": "*",
     "passport": "*",
-    "passport-jwt": "*"
+    "passport-jwt": "*",
+    "bootstrap": "4.0.0"
   }
 }
