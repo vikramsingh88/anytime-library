@@ -21,7 +21,7 @@
     "cors": "*",
     "dateformat": "^2.0.0",
     "express": "*",
-    "jsonwebtoken": "*",
+    "jsonwebtoken": "*8.0.0",
     "mongoose": "*",
     "passport": "*",
     "passport-jwt": "*"
