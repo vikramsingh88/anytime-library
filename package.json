@@ -24,6 +24,8 @@
     "jsonwebtoken": "*",
     "mongoose": "*",
     "passport": "*",
-    "passport-jwt": "*"
+    "passport-jwt": "*",
+    "hoek": "5.0.3",
+    "topo": "3.0.0"
   }
 }
