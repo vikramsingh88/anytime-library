@@ -24,6 +24,7 @@
     "jsonwebtoken": "*",
     "mongoose": "*",
     "passport": "*",
-    "passport-jwt": "*"
+    "passport-jwt": "*",
+    "bson": "2.0.0"
   }
 }
