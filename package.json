@@ -4,7 +4,9 @@
   "description": "node server for library management system",
   "main": "app.js",
   "scripts": {
-    "start": "node app.js"
+    "start": "node app.js",
+    "snyk-protect": "snyk protect",
+    "prepublish": "npm run snyk-protect"
   },
   "keywords": [
     "node",
@@ -24,6 +26,8 @@
     "jsonwebtoken": "*",
     "mongoose": "*",
     "passport": "*",
-    "passport-jwt": "*"
-  }
+    "passport-jwt": "*",
+    "snyk": "^1.189.0"
+  },
+  "snyk": true
 }
